@@ -7,6 +7,13 @@ This showcases a simple way to create the following using Golang:
 
 ## Pasword Hashing
 The function I will demonstrate will use `PBKDF2` with `SHA-256` as the underlying hashing algorithm.
+
+We need to install the `golang.org/x/crypto/pbkdf2` package to use `PBKDF2`:
+```
+go get golang.org/x/crypto/pbkdf2
+```
+
+
 The `salt` value should be randomly generated and stored with the hashed password.
 This is needed because lets say we are using the hash function to secure a users password, but then another user creates a new account with the same password. The `salt` would be used to differentiate between the two users.
 So when we store a hashed password in this example, the `salt` would be stored along with the hashed password.
