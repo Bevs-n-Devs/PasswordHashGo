@@ -66,7 +66,8 @@ For my approach I will use `openssl` to create my raw master key in bash then tu
 openssl rand -base64 32
 
 // creating a global masterKey variable in bytes
-var masterKey = []byte("+bgzo+wLkcDegCo3xMi7RYxu3qvm3CTVTB9Mpr5V0zg=")
+var masterKeyStr = []byte("DSeM2Vg6jR6xtnPqwzYj8412DNZmeMfDPpNHNvZ0ucc=") // generate a random key by running openssl rand -base64 32
+var masterKey = masterKeyStr[:32]                                         // use the 1st 32 bytes of the master key
 ```
 
 Creating an encryption function using wteh master key:
